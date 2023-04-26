@@ -1,12 +1,15 @@
 {
     "manifest_version":3, 
-    "name": "Y! Finance Stock Quotes",
-    "description": "A simple Chrome extension that scrapes stock quotes from Yahoo Finance.",
+    "name": "Google Stock Quotes",
+    "description": "A simple Chrome extension that scrapes stock quotes from Google Finance.",
     "version": "0.1",
     "permissions": ["activeTab", "scripting", "cookies"],
     "action": {
       "default_popup": "popup.html",
       "default_title": "Get them quotes"
+    },
+    "background": {
+      "service_worker": "background.js"
     },
     "host_permissions": ["https://www.google.com/finance/quote/*"]
   }

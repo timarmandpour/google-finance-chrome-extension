@@ -5,15 +5,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
   scrapeButton.addEventListener('click', function() {
     var symbol = symbolInput.value.toUpperCase();
-    var url = 'https://www.google.com/finance/quote/' + symbol + ':NYSE?hl=en';
-
+    var exchange = 'NYSE';
+    var url = 'https://www.google.com/finance/quote/' + symbol + ':' + exchange + '?hl=en';
+   
     fetch(url)
       .then(response => response.text())
-      .then(data => {
+      .then(
+        data => {
         var start = data.indexOf('<div class="YMlKec fxKbKc">') + '<div class="YMlKec fxKbKc">'.length;
         var end = data.indexOf('</div>', start);
         var quote = data.substring(start, end);
         resultDiv.innerHTML = 'The current price of ' + symbol + ' is ' + quote;
-      });
+      })
   });
 });
