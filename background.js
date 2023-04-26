@@ -1,7 +1,14 @@
 // Copilot: Generate a function that can return the exchange a stock symbol is on from https://www.google.com/finance/quote/
-//function getExchange(symbol) {
-//    return 'NYSE';
-//}
+function getExchangeCP(symbol) {
+    return 'NYSE';
+}
+
+// Generate a function that can concatenante two lines of text into a single line of text
+function concatLines(line1, line2) {
+    return line1 + line2;
+}
+
+
 
 // OpenAI ChatGPT: Generate a function that can return the exchange a stock symbol is on from https://www.google.com/finance/quote/
 async function getExchange(symbol) {
